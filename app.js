@@ -1,6 +1,7 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const mongoose = require('mongoose');
 
@@ -10,10 +11,20 @@ const app = express();
 app.engine('mst', mustacheExpress());
 app.set('view engine', 'mst');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(cookieSession({ secret: "qwerty" }));
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/movies');
+
+// Cookie based auth on all requests.
+app.use((req, res, next) => {
+    if (req.cookies['allowed'] && req.cookies['allowed'] === 'yes') {
+        next();
+    } else {
+        res.sendStatus(404);
+    }
+});
 
 app.get('/', (req, res) => {
     const ctx = { 'title': 'Home' };
