@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(cookieSession({ secret: "qwerty" }));
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/movies');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/movies');
 
 // Cookie based auth on all requests.
 app.use((req, res, next) => {
@@ -158,6 +158,6 @@ function saveMovieThenRedirect(req, res, originalMovie) {
     });
 }
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('Listening...');
 });
