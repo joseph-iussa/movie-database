@@ -1,0 +1,13 @@
+{{#formSuccessMsg}}
+<div class="message success">
+    {{ formSuccessMsg }}
+</div>
+{{/formSuccessMsg}}
+
+{{#validationErrors.length}}
+<ul class="message error">
+    {{#validationErrors}}
+        <li>{{ message }}</li>
+    {{/validationErrors}}
+</ul>
+{{/validationErrors.length}}

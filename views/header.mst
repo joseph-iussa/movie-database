@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} - Movie Database</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        a,
+        a:visited {
+            color: inherit;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 10rem;
+        }
+
+        .message {
+            padding: 15px;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>

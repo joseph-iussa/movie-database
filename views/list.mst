@@ -1,0 +1,27 @@
+{{> header }}
+<h1>Movie Database</h1>
+
+{{> messages }}
+
+<p><a href="/new">Create New Movie</a></p>
+
+<h2>Existing Movies</h2>
+
+{{^movies}}
+<p>There are no movies in the database.</p>
+{{/movies}}
+
+{{#movies.length}}
+<table >
+    {{#movies}}
+        <tr>
+            <td><a href="/view/{{ _id }}">{{ title }}</a></td>
+            <td>{{ yearReleased }}</td>
+            <td><a href="/edit/{{ _id }}">Edit</a></td>
+            <td><a href="/delete/{{ _id }}">Delete</a></td>
+        </tr>
+    {{/movies}}
+</table>
+{{/movies.length}}
+
+{{> footer }}

@@ -1,0 +1,10 @@
+<table>
+    <tr>
+        <td>Title</td>
+        <td>{{ movie.title }}</td>
+    </tr>
+    <tr>
+        <td>Year Released</td>
+        <td>{{ movie.yearReleased }}</td>
+    </tr>
+</table>

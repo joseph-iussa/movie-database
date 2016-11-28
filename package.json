@@ -9,6 +9,11 @@
   "author": "Joseph Iussa",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.15.2",
+    "cookie-session": "^2.0.0-alpha.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.0",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.4"
   }
 }
