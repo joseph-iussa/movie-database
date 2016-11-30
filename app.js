@@ -154,7 +154,7 @@ function saveMovieThenRedirect(req, res, originalMovie) {
             req.session.formSuccessful = true;
         }
         req.session.afterRedirect = true;
-        res.redirect('');
+        res.redirect(req.originalUrl);
     });
 }
 
