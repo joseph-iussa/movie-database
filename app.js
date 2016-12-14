@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/movies');
 
 // Cookie based auth on all requests.
 app.use((req, res, next) => {
-    if (req.cookies['allowed'] && req.cookies['allowed'] === 'yes') {
+    if (req.cookies['allowed'] === 'yes') {
         next();
     } else {
         res.sendStatus(404);
