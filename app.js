@@ -22,7 +22,7 @@ app.use((req, res, next) => {
     if (req.cookies['allowed'] === 'yes') {
         next();
     } else {
-        res.sendStatus(404);
+        res.sendStatus(401);
     }
 });
 
